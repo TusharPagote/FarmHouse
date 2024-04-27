@@ -1,0 +1,80 @@
+.hero {
+  background-image: url("../../../public/images/newBanner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+}
+.hero .container {
+  display: flex;
+  padding-top: 10%;
+  vertical-align: middle;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero .form {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero h1 {
+  color: #fff;
+  font-size: 45px;
+}
+.hero p {
+  color: #fff;
+  opacity: 0.8;
+}
+
+form {
+  min-width: 400px;
+  background-color: #fff;
+  border-radius: 15px;
+  /* margin-top: 50px; */
+  padding: 10px 20px;
+}
+form input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 5px;
+  border-radius: 5px;
+}
+form span {
+  font-size: 14px;
+  color: grey;
+}
+input::placeholder {
+  font-size: 17px;
+  color: black;
+}
+form .buttonSection {
+  display: flex;
+  justify-content: space-around;
+}
+form .box {
+  padding: 15px;
+  /* border-left: 1px solid rgba(128, 128, 128, 0.2); */
+}
+form .box:nth-child(1) {
+  border-left: none;
+}
+form h4 {
+  font-weight: 500;
+}
+@media screen and (max-width: 800px) {
+  .hero .container {
+    padding-top: 30%;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  form .box {
+    border-left: none;
+  }
+  form input {
+    width: 100%;
+  }
+}

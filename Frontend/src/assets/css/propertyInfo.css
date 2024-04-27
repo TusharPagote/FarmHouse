@@ -1,0 +1,185 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.property-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto; /* Adjusted to auto for responsiveness */
+  width: 90%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.property-box {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.property-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 95%;
+  margin: 0.5rem; /* Adjusted margin for responsiveness */
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 8px;
+  border-width: 1px;
+  /* -webkit-box-shadow: 0 0 10px 0px rgba(118, 117, 117, 0.5);
+  box-shadow: 0 0 10px 0px rgba(118, 117, 117, 0.5); */
+}
+
+.gap {
+  width: 50px;
+}
+
+.property-image-section {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1.5;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.property-image-section img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 20px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.property-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.property-info-label,
+.property-info-value {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.property-info-sublabel {
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.property-info-label {
+  font-weight: bold;
+}
+
+.property-info-value {
+  font-size: 0.9rem;
+}
+
+/* Make each column have the same width */
+.property-info-label {
+  width: 70%; /* Adjust width as needed */
+}
+
+.property-info-value {
+  width: 30%; /* Adjust width as needed */
+}
+
+.property-info-label,
+.property-info-value {
+  font-size: 0.9rem;
+}
+
+.property-button {
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .property-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* Center items horizontally on smaller screens */
+  }
+
+  .property-info {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0.5rem 0; /* Adjusted margin for smaller screens */
+  }
+
+  .property-info-label,
+  .property-info-value {
+    font-size: 0.8rem; /* Adjusted font size for smaller screens */
+  }
+}
+
+/*  */
+.card {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  /* margin: 10px; */
+}
+
+.card-icon {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.card-icon img {
+  width: 70px; /* Adjust the width of the icon as needed */
+  height: 50px; /* Adjust the height of the icon as needed */
+}
+
+.card-icon i {
+  font-size: 1.3rem;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  /* margin-bottom: 5px; */
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #666; /* Adjust text color as needed */
+}

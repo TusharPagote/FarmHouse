@@ -1,0 +1,100 @@
+.login-page {
+  display: flex;
+  height: 90vh;
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.login-section h2 {
+  text-align: center;
+}
+.login-section p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-section input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.image-section {
+  flex: 1;
+  /* background-image: url("../../../../public/images/banner.png"); */
+  background-size: contain;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.form-login,
+.form-signup {
+  /* width: 70%; */
+  margin: 3rem auto;
+  /* padding: 2rem; */
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border-width: 1px;
+  /* box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5); */
+}
+
+.control label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  margin-left: 1px;
+  color: Black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.control input {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: white;
+  color: #142020;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.form-button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #cc0001;
+  color: #d9e2f1;
+  cursor: pointer;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: #cc0001;
+}
+
+.form-button-flat {
+  background-color: #efb0b0;
+  color: black;
+}
+
+.form-button-flat:hover,
+.form-button-flat:focus {
+  background-color: transparent;
+  color: #869999;
+}

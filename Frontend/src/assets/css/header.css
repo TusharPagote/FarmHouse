@@ -1,0 +1,80 @@
+header {
+  background-color: #fff;
+  /* height: 12vh; */
+  box-shadow: 0 5px 30px rgba(0, 22, 84, 0.1);
+  padding: 2px 0;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+header img {
+  width: 100px;
+}
+
+header a {
+  margin-left: 30px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #cc0001;
+}
+
+header span {
+  width: auto;
+  padding: 0px 6px;
+  background: #cc0001;
+  border-radius: 50px;
+  color: #ffffff;
+  margin-right: 4px;
+  font-weight: 400;
+}
+
+header h4 {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+header .toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0;
+  }
+
+  header img {
+    margin-top: 4vh; /* Adjusted margin using viewport units */
+  }
+
+  header .button {
+    display: none;
+  }
+
+  header .nav .flex {
+    display: none;
+  }
+
+  header .toggle {
+    display: block;
+    margin-top: 2vh; /* Adjusted margin using viewport units */
+  }
+
+  header .small {
+    position: absolute;
+    top: 12vh; /* Adjusted position using viewport units */
+    left: 0;
+    width: 100%;
+    background-color: #cc0001;
+    padding: 2vh; /* Adjusted padding using viewport units */
+  }
+
+  header li a {
+    display: inline-block;
+    margin-bottom: 4vh; /* Adjusted margin using viewport units */
+    color: #fff;
+  }
+}
