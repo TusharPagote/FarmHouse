@@ -2,11 +2,12 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../../assets/css/register.css";
 import signin from "../../../assets/images/signupNew.png";
-import ShowDetailModal from "../../../components/modal/ShowDetailModal";
-
+// import ShowDetailModal from "../../../components/modal/ShowDetailModal";
+import Swal from "sweetalert2";
+import { addData } from "../../../assets/data/http";
 
 export default function Signup() {
-  const dialog = useRef();
+  // const dialog = useRef();
   const formRef = useRef();
   const [passwordsAreNotEqual, setPasswordsAreNotEqual] = useState(false);
 
@@ -19,17 +20,57 @@ export default function Signup() {
       setPasswordsAreNotEqual(true);
       return;
     }
+
+    // Call sendEnquiry function to send data to the backend
+    addData(data, "userlist")
+      .then((success) => {
+        if (success) {
+          console.log("Success to send data to enqyuries...");
+          // userdata sent successfully
+          // Open modal or show success message
+          // dialog.current.open();
+          Swal.fire({
+            icon: "success",
+            title: "Done !!",
+            text: "Your userdata has been sent successfully",
+          });
+        } else {
+          console.log("Falied to send data to enqyuries...");
+          // Failed to send userdata
+          // Handle error (e.g., show error message)
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      })
+      .catch((error) => {
+        // Handle error (e.g., show error message)
+        console.error("Error sending userdata:", error);
+      });
+
+    // Log the data
+    // console.log(data);
     console.log(data);
     // open modal
-    dialog.current.open();
+    // dialog.current.open();
     // clear form after submission
     setPasswordsAreNotEqual(false);
     formRef.current.reset();
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "You have succsessfuly signed up !",
+      showConfirmButton: true,
+      timer: 3000,
+    });
   }
 
   return (
     <>
-      <ShowDetailModal ref={dialog} />
+      {/* <ShowDetailModal ref={dialog} /> */}
       <section className="login-page">
         <div className="image-section">
           <img src={signin} alt="" />
@@ -41,11 +82,11 @@ export default function Signup() {
               <p>Getting started is easy</p>
               <div className="control-row">
                 <div className="control">
-                  <label htmlFor="full-name">Full Name</label>
+                  <label htmlFor="fullName">Full Name</label>
                   <input
                     type="text"
                     id="first-name"
-                    name="full-name"
+                    name="fullName"
                     required
                   />
                 </div>

@@ -1,0 +1,20 @@
+[
+  {
+    "fullName": "Tushar Deepak Pagote",
+    "email": "ptusharp23@gmail.com",
+    "password": "111111",
+    "confirm-password": "111111"
+  },
+  {
+    "fullName": "Tushar Pagote",
+    "email": "ptusharp23@gmail.com",
+    "password": "222222",
+    "confirm-password": "222222"
+  },
+  {
+    "fullName": "Tushar Deepak Pagote",
+    "email": "ptusharp23@gmail.com",
+    "password": "333333",
+    "confirm-password": "333333"
+  }
+]

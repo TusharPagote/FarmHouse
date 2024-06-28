@@ -7,23 +7,23 @@ import { useFetchData } from "../../../assets/data/http";
 const RecentCard = () => {
   const [farmhouseList, setFarmhouseList] = useState();
   useFetchData("/list", setFarmhouseList);
-  // console.log("From recent enquiries:", farmhouseList);
-  // console.log("From recent list:" + list);
   if (!farmhouseList) {
     return <div>Loading...</div>; // or any loading indicator you prefer
   }
   return (
     <>
-      <Link to={"property"}>
-        <div className="content grid3 mtop">
-          {farmhouseList.map((val, index) => {
-            const { cover, category, location, name, price, type } = val;
-            return (
-              <div
-                className="box shadow"
-                style={{ borderRadius: "25px" }}
-                key={index}
-              >
+      {/* <Link to={"property"}> */}
+      <div className="content grid3 mtop">
+        {farmhouseList.map((val, index) => {
+          const { cover, category, location, name, price, type } = val;
+          return (
+            <div
+              className="box shadow"
+              style={{ borderRadius: "25px" }}
+              key={index}
+            >
+              <Link to={"property"}>
+                {" "}
                 <div
                   className="img"
                   style={{ padding: "1rem", position: "relative" }}
@@ -59,11 +59,12 @@ const RecentCard = () => {
                   <div className="circle"></div>
                   <span>{type}</span>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </Link>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      {/* </Link> */}
     </>
   );
 };

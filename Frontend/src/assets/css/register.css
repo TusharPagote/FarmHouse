@@ -1,6 +1,6 @@
 .login-page {
   display: flex;
-  height: 90vh;
+  height: 100vh;
 }
 
 .login-section {
@@ -79,8 +79,10 @@
   border-radius: 10px;
   border: none;
   background-color: #cc0001;
-  color: #d9e2f1;
+  /* color: #d9e2f1; */
+  color: white;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .form-button:hover,

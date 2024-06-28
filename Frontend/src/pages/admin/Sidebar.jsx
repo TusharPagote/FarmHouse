@@ -70,15 +70,15 @@ function Sidebar({ openSidebarToggle, OpenSidebar, handleSidebarButtonClick }) {
         <li
           className={
             "sidebar-list-item " +
-            (selectedButton === "Categories" ? "selected" : "")
+            (selectedButton === "Customers" ? "selected" : "")
           }
         >
           <button
-            // className={selectedButton === "Categories" ? "selected" : ""}
-            onClick={() => handleButtonClick("Categories")}
+            // className={selectedButton === "Customers" ? "selected" : ""}
+            onClick={() => handleButtonClick("Customers")}
           >
             <i className="fa-solid fa-filter icon"></i>
-            Categories
+            Customers
           </button>
         </li>
       </ul>

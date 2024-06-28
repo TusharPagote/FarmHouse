@@ -30,7 +30,11 @@ const Footer = () => {
         <div className="container">
           <div className="box">
             <div className="logo">
-              <img src="../images/newLogo.png" alt="" />
+              <img
+                src="../images/logo-farmrent.png"
+                alt=""
+                style={{ width: "90px" }}
+              />
               <h2>Do You Need Help With Anything?</h2>
               <p>
                 Receive updates, hot deals, tutorials, discounts sent straight

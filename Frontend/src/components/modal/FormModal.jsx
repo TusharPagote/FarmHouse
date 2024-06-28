@@ -1,12 +1,15 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import "../../assets/css/contact.css";
 import { createPortal } from "react-dom";
-import { addData } from "../../assets/data/http";
+import { addData, updateDataById } from "../../assets/data/http";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
 import "../../assets/css/modal.css";
 
-const FormModal = forwardRef(function FormModal({ endpont, children }, ref) {
+const FormModal = forwardRef(function FormModal(
+  { id = "", endpont, children },
+  ref
+) {
   const dialog = useRef();
   const formRef = useRef();
   const [verified, setVerified] = useState(true);
@@ -29,7 +32,7 @@ const FormModal = forwardRef(function FormModal({ endpont, children }, ref) {
     },
   }));
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const fd = new FormData(formRef.current);
@@ -41,51 +44,64 @@ const FormModal = forwardRef(function FormModal({ endpont, children }, ref) {
     // Convert form data to an object
     const data = Object.fromEntries(fd.entries());
 
-    // Include random ID and acquisition channels in the data object
-    data.id = randomId;
-    if (endpont === "list") {
-      data.cover = "images/list/p-4.png";
+    // Include random ID in the data object
+    // Include ID in the data object if it's updating an existing entry
+    if (!id) {
+      // Generate a random ID for new entries
+      data.id = generateRandomId();
+      if (endpont === "list") {
+        data.cover = "images/list/p-4.png";
+      }
+    } else {
+      data.id = id; // Use the provided ID for updates
     }
 
     // Validate phone number
     if (endpont === "enquiries" && data.phone.length !== 10) {
       return;
     }
-
-    // Call sendEnquiry function to send data to the backend
-    addData(data, endpont)
-      .then((success) => {
+    try {
+      if (!id) {
+        // Call addData function to add new data
+        const success = await addData(data, endpont);
         if (success) {
-          console.log("Success to send data to enqyuries...");
-          // Enquiry sent successfully
-          // Open modal or show success message
-          // dialog.current.open();
           Swal.fire({
             icon: "success",
             title: "Done !!",
             text: "Your enquiry has been sent successfully",
           });
         } else {
-          console.log("Falied to send data to enqyuries...");
-          // Failed to send enquiry
-          // Handle error (e.g., show error message)
           Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "Something went wrong!",
           });
         }
-      })
-      .catch((error) => {
-        // Handle error (e.g., show error message)
-        console.error("Error sending enquiry:", error);
-      });
+      } else {
+        // Call updateDataById function to update existing data
+        const success = await updateDataById(id, data, endpont);
+        if (success) {
+          Swal.fire({
+            icon: "success",
+            title: "Done !!",
+            text: "Your data has been updated successfully",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      }
+    } catch (error) {
+      console.error("Error submitting data:", error);
+    }
 
     // Log the data
     console.log(data);
 
     // Clear form after submission
-
     formRef.current.reset();
     dialog.current.close();
   }

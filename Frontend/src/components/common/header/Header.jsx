@@ -12,7 +12,11 @@ const Header = () => {
       <header>
         <div className="container flex">
           <div className="logo">
-            <img src="./images/newLogo.png" alt="" />
+            <img
+              src="./images/logo-farmrent-black.png"
+              alt=""
+              style={{ width: "70px" }}
+            />
           </div>
           <div className="nav">
             <ul className={navList ? "small" : "flex"}>
@@ -38,8 +42,8 @@ const Header = () => {
             </h4>
 
             <Button>
-              <i className="fa-solid fa-house-circle-check icon-style"></i> Book
-              Now
+              <i className="fa-solid fa-house-circle-check icon-style"></i>
+              Enquiry Now
             </Button>
           </div>
 

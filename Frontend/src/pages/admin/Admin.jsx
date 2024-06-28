@@ -6,6 +6,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import Enquiry from "./Enquiry";
 import FarmhouseList from "./Farmhouse/FarmhouseList";
+import Customers from "./Customers";
 
 
 function Admin() {
@@ -32,6 +33,7 @@ function Admin() {
       {selectedComponent === "Dashboard" && <Dashboard />}
       {selectedComponent === "Enquiry" && <Enquiry />}
       {selectedComponent === "Farmhouse" && <FarmhouseList />}
+      {selectedComponent === "Customers" && <Customers />}
      
     </div>
   );

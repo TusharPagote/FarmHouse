@@ -72,7 +72,7 @@
 
 import React, { useRef } from "react";
 import "../../assets/css/propertyInfo.css";
-import ImageCarousel from "./image_component";
+import ImageCarousel from "../../components/image_component";
 // import Card from "../../components/Card";
 import { useLocation } from "react-router-dom";
 // import MessageModal from "../../components/modal/MessageModal";

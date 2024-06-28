@@ -10,6 +10,9 @@ import Signup from "../home/Register/Signup";
 import PropertyInfo from "../property/PropertyInfo";
 import Home from "../home/Home";
 import Admin from "../admin/Admin";
+import AdminLogin from "../home/Register/AdminLogin";
+import AdminLayout from "./AdminLayout";
+import EditFarmhouse from "../admin/Farmhouse/EditFarmhouse";
 
 // const Pages = () => {
 //   return (
@@ -43,7 +46,17 @@ const router = createBrowserRouter([
       { path: "property", element: <PropertyInfo /> },
     ],
   },
-  { path: "admin", element: <Admin /> },
+  // { path: "adminlogin", element: <AdminLogin /> },
+  // { path: "admin", element: <Admin /> },
+  { path: "adminlogin", element: <AdminLogin /> },
+  {
+    path: "admin",
+    element: <AdminLayout />, 
+    children: [
+      { index: true, element: <Admin /> },
+      { path: "editfarmhouse", element: <EditFarmhouse /> },
+    ],
+  },
 ]);
 
 function Pages() {

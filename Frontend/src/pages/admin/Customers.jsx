@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import { useFetchData } from "../../assets/data/http";
 import ShowDetailModal from "../../components/modal/ShowDetailModal";
 
-export default function Enquiry() {
+export default function Customers() {
   const [userData, setUserData] = useState([]);
-  useFetchData("/enquiries", setUserData, (error) => {
+  useFetchData("/userlist", setUserData, (error) => {
     console.error("Error fetching data:", error);
   });
 
@@ -15,12 +15,12 @@ export default function Enquiry() {
   };
 
   if (!userData) {
-    return <div></div>;
+    return <div>NULL</div>;
   }
 
   return (
     <>
-      <ShowDetailModal ref={dialog} tag="enquiry" />
+      <ShowDetailModal ref={dialog} />
       <div
         style={{
           width: "75rem",
@@ -41,9 +41,7 @@ export default function Enquiry() {
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>City</th>
-                <th>Guest</th>
-                <th>Phone Number</th>
+                <th>Password</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -51,11 +49,9 @@ export default function Enquiry() {
               {userData.map((property) => (
                 <tr key={property.id}>
                   <td>{property.id}</td>
-                  <td>{property.name}</td>
+                  <td>{property.fullName}</td>
                   <td>{property.email}</td>
-                  <td>{property.city}</td>
-                  <td>{property.Guest}</td>
-                  <td>{property.phone}</td>
+                  <td>*********</td>
                   <td>
                     <button
                       className="view-button"

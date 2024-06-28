@@ -183,3 +183,70 @@
   font-size: 0.9rem;
   color: #666; /* Adjust text color as needed */
 }
+
+/*  */
+.edit-farmhouse-page {
+  padding: 20px;
+}
+
+.edit-farmhouse-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 60px;
+}
+
+.farmhouse-details,
+.enquiry-actions,
+.upload-images,
+.enquiry-analytics,
+.place-offers {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.farmhouse-details-section,
+.offer-section {
+  margin-bottom: 15px;
+}
+
+.farmhouse-details-section label,
+.offer-section input,
+.offer-section textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.farmhouse-details-section input,
+.offer-section input,
+.offer-section textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* .enquiry-actions button {
+  width: 100%;
+} */
+
+.button-section {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.analytics-placeholder {
+  background-color: #f9f9f9;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+}

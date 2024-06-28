@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/register.css";
-import login from "../../../assets/images/loginNew.png";
 
-export default function Login() {
+export default function AdminLogin() {
   const [emailIsInvalid, setEmailIsInvalid] = useState(false);
+  const navigate = useNavigate();
 
   const email = useRef();
   const password = useRef();
@@ -25,6 +25,15 @@ export default function Login() {
     setEmailIsInvalid(false);
 
     console.log(enteredEmail, enteredPassword);
+
+    // Check your condition here
+    if (
+      enteredEmail === "admin@example.com" &&
+      enteredPassword === "password"
+    ) {
+      // Navigate to the signup page if the condition is met
+      navigate("/admin");
+    }
   }
 
   return (
@@ -33,8 +42,7 @@ export default function Login() {
         <div className="login-section">
           <div className="login-main">
             <form className="form-login" onSubmit={handleSubmit}>
-              <h2>Welcome Back</h2>
-              <p>Login into your account</p>
+              <h2>Admin Login</h2>
               <div className="control-row">
                 <div className="control no-margin">
                   <label htmlFor="email">Email</label>
@@ -57,23 +65,20 @@ export default function Login() {
                 </div>
               </div>
 
-              <p className="form-actions">
-                <button type="reset" className="form-button form-button-flat">
-                  Reset
+              <p className="form-actions" style={{ width: "100%" }}>
+                <button
+                  type="submit"
+                  className="form-button"
+                  style={{ width: "100%", padding: "1.2rem" }}
+                >
+                  Login
                 </button>
-                <button className="form-button">Login</button>
               </p>
               <p style={{ alignContent: "center", paddingTop: "10px" }}>
-                Dont have an account ? please <Link to="/signin">Register</Link>
-              </p>
-              <p style={{ alignContent: "center", paddingTop: "10px" }}>
-                <Link to="/adminlogin">Are you admin ?</Link>
+                <Link to="/signin">Not an admin ?</Link>
               </p>
             </form>
           </div>
-        </div>
-        <div className="image-section">
-          <img src={login} alt="" />
         </div>
       </div>
     </>
